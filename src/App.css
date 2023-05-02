@@ -1,17 +1,21 @@
 .container h2 {
   text-align: center;
   margin: 25px auto;
+  color: aliceblue;
 }
 
 .list {
   text-align: left;
   max-width: 750px;
   margin: auto;
+  background-color: rgb(101, 104, 104);
+  color: aliceblue;
 }
 
 .submit-form {
   max-width: 300px;
   margin: auto;
+  color: aliceblue;
 }
 
 .edit-form {

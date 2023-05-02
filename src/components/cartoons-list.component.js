@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import CartoonDataService from "../services/cartoon.services";
-
 import Cartoon from "./cartoon.component";
 
 export default class CartoonList extends Component {
@@ -38,6 +37,7 @@ export default class CartoonList extends Component {
                 title: data.title,
                 description: data.description,
                 published: data.published,
+                url: data.url
             });
         });
 
@@ -64,9 +64,9 @@ export default class CartoonList extends Component {
         const { tutorials, currentTutorial, currentIndex } = this.state;
 
         return (
-            <div className="list row">
+            <div className="list row"> 
                 <div className="col-md-6">
-                    <h4>Tutorials List</h4>
+                    <h4>Lista de personajes</h4>
 
                     <ul className="list-group">
                         {tutorials &&
@@ -90,7 +90,7 @@ export default class CartoonList extends Component {
                     ) : (
                         <div>
                             <br />
-                            <p>Please click on a Tutorial...</p>
+                            <p>Selecciona un personaje de caricatura</p>
                         </div>
                     )}
                 </div>
