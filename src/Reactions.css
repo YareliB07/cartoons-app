@@ -1,0 +1,52 @@
+.reaction-button.like {
+    background-color: #2d88ff;
+  }
+  
+  .reaction-button.love {
+    background-color: #ea063b;
+  }
+  
+  .reaction-button.haha {
+    background-color: #ff8b07;
+  }
+  
+  .reaction-button.surprise {
+    background-color: #ffd607;
+  }
+
+  .reaction-button.sad {
+    background-color: #9e9e9e;
+  }
+  
+  .reaction-button.angry {
+    background-color: #000000;
+  }
+  
+  .reaction-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 90%;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    margin-right: 8px;
+  }
+  
+  .reaction-button .icon {
+    font-size: 20px;
+    align-items: center;
+  }
+  
+  .reaction-button .label {
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: #333;
+    display: none;
+  }
+  
+  .reaction-button:hover .label {
+    display: inline-block;
+  }
