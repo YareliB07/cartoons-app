@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import TutorialDataService from "../services/cartoon.services";
-import Reactions from './cartoon-reactions.component';
-import CommentBox from './cartoon-comments.component';
-
 
 export default class Tutorial extends Component {
     constructor(props) {
@@ -144,7 +141,7 @@ export default class Tutorial extends Component {
 
                             <div className="form-group">
                                 <label htmlFor="url"> Imagen: </label>
-                                <img src={currentTutorial.url} alt="Photo" width="500" height="350" ></img>
+                                <img src={currentTutorial.url} alt="pic" width="500" height="350" ></img>
                             </div>
 
                             <div className="form-group">
@@ -157,14 +154,14 @@ export default class Tutorial extends Component {
 
                         {currentTutorial.published ? (
                             <button 
-                                className="badge badge-primary mr-2"
+                                className="btn btn-outline-secondary"
                                 onClick={() => this.updatePublished(false)}
                             >
                                 🕓🗯
                             </button>
                         ) : (
                             <button
-                                className="badge badge-primary mr-2"
+                                className="btn btn-success"
                                 onClick={() => this.updatePublished(true)}
                             >
                                 ✅
@@ -172,7 +169,7 @@ export default class Tutorial extends Component {
                         )}
 
                         <button 
-                            className="badge badge-danger mr-2"
+                            className="btn btn-danger"
                             onClick={this.deleteTutorial}
                         >
                             ❌
@@ -180,15 +177,12 @@ export default class Tutorial extends Component {
 
                         <button
                             type="submit"
-                            className="badge badge-success"
+                            className="btn btn-primary"
                             onClick={this.updateTutorial}
                         >
                             🔄
                         </button>
                         <p>{this.state.message}</p>
-
-                        <Reactions />
-                        <CommentBox />
                     </div>
                 ) : (
                     <div>

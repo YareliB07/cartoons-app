@@ -29,7 +29,7 @@ class App extends Component {
           </div>
         </nav>
 
-        <div className="container mt-3">
+        <div className="container mt-3 bg-dark mx-auto">
           <h2>Cartoons App</h2>
           <Routes>
             <Route path="/" element={<CartoonList />} />
