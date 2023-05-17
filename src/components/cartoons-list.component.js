@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import CartoonDataService from "../services/cartoon.services";
 import Cartoon from "./cartoon.component";
+import Reactions from "./cartoon-reactions.component";
+import CommentBox from "./cartoon-comments.component";
 
 export default class CartoonList extends Component {
     constructor(props) {
@@ -64,8 +66,8 @@ export default class CartoonList extends Component {
         const { tutorials, currentTutorial, currentIndex } = this.state;
 
         return (
-            <div className="list row"> 
-                <div className="col-md-6">
+            <div className="list-row"> 
+                <div className="col-md-6 bg-dark mx-auto">
                     <h4>Lista de personajes</h4>
 
                     <ul className="list-group">
@@ -77,11 +79,22 @@ export default class CartoonList extends Component {
                                     key={index}
                                 >
                                     {tutorial.title}
+                                    <tr>
+                                        {tutorial.description}
+                                    </tr>
+                                    
+                                    <img src={tutorial.url} width="540" height="280" alt=""/>
+                                    <tr>
+                                        <Reactions></Reactions>
+                                    </tr>
+                                    <tr>
+                                        <CommentBox></CommentBox>
+                                    </tr>
                                 </li>
                             ))}
                     </ul>
                 </div>
-                <div className="col-md-6">
+                <div className="col-md-6 bg-dark mx-auto">
                     {currentTutorial ? (
                         <Cartoon
                             tutorial={currentTutorial}
