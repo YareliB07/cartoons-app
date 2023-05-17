@@ -19,5 +19,5 @@ class CartoonDataService {
     return db.doc(id).delete();
   }
 }
-
+// eslint-disable-next-line
 export default new CartoonDataService();

@@ -15,6 +15,7 @@ export default class Tutorial extends Component {
                 id: null,
                 title: "",
                 description: "",
+                image: "",
                 published: false,
             },
             message: "",
@@ -90,7 +91,7 @@ export default class Tutorial extends Component {
         TutorialDataService.update(this.state.currentTutorial.id, data)
             .then(() => {
                 this.setState({
-                    message: "The tutorial was updated successfully!",
+                    message: "The cartoon was updated successfully!",
                 });
             })
             .catch((e) => {
@@ -109,16 +110,16 @@ export default class Tutorial extends Component {
     }
 
     render() {
-        const { currentTutorial } = this.state;
+        const { currentTutorial} = this.state;
 
         return (
             <div>
-                <h4>Tutorial</h4>
+                <h4>Cartoons</h4>
                 {currentTutorial ? (
                     <div className="edit-form">
                         <form>
                             <div className="form-group">
-                                <label htmlFor="title">Title</label>
+                                <label htmlFor="title">Titulo</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -128,7 +129,7 @@ export default class Tutorial extends Component {
                                 />
                             </div>
                             <div className="form-group">
-                                <label htmlFor="description">Description</label>
+                                <label htmlFor="description">Descripcion</label>
                                 <input
                                     type="text"
                                     className="form-control"
@@ -136,6 +137,11 @@ export default class Tutorial extends Component {
                                     value={currentTutorial.description}
                                     onChange={this.onChangeDescription}
                                 />
+                            </div>
+
+                            <div className="form-group">
+                                <label htmlFor="url"> Imagen: </label>
+                                <img src={currentTutorial.url} alt="pic" width="500" height="350" ></img>
                             </div>
 
                             <div className="form-group">
@@ -147,41 +153,41 @@ export default class Tutorial extends Component {
                         </form>
 
                         {currentTutorial.published ? (
-                            <button
-                                className="badge badge-primary mr-2"
+                            <button 
+                                className="btn btn-outline-secondary"
                                 onClick={() => this.updatePublished(false)}
                             >
-                                UnPublish
+                                🕓🗯
                             </button>
                         ) : (
                             <button
-                                className="badge badge-primary mr-2"
+                                className="btn btn-success"
                                 onClick={() => this.updatePublished(true)}
                             >
-                                Publish
+                                ✅
                             </button>
                         )}
 
-                        <button
-                            className="badge badge-danger mr-2"
+                        <button 
+                            className="btn btn-danger"
                             onClick={this.deleteTutorial}
                         >
-                            Delete
+                            ❌
                         </button>
 
                         <button
                             type="submit"
-                            className="badge badge-success"
+                            className="btn btn-primary"
                             onClick={this.updateTutorial}
                         >
-                            Update
+                            🔄
                         </button>
                         <p>{this.state.message}</p>
                     </div>
                 ) : (
                     <div>
                         <br />
-                        <p>Please click on a Tutorial...</p>
+                        <p>Selecciona un personaje de caricatura</p>
                     </div>
                 )}
             </div>

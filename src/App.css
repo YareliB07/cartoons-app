@@ -1,20 +1,96 @@
-.container h2 {
-  text-align: center;
-  margin: 25px auto;
-}
-
-.list {
-  text-align: left;
-  max-width: 750px;
-  margin: auto;
-}
 
 .submit-form {
   max-width: 300px;
   margin: auto;
 }
 
-.edit-form {
-  max-width: 300px;
-  margin: auto;
+.comment {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.comment img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.comment-body p {
+  margin: 0;
+}
+
+.comment-actions {
+  display: flex;
+  margin-top: 5px;
+}
+
+.comment-action {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.comment-action span {
+  margin-left: 5px;
+}
+
+.comment-action:hover {
+  text-decoration: underline;
+}
+
+/* Estilos de formulario de comentarios */
+
+.comment-form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-form textarea {
+  margin-bottom: 10px;
+  height: 100px;
+  resize: none;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.comment-form button {
+  background-color: #3b5998;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.comment-form button:hover {
+  background-color: #1d3b6b;
+}
+
+.form-group {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: white;
+}
+
+.list-row {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin-bottom: 10px;
+}
+
+.list-group-item {
+  background-color: #1c1c1c;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin-bottom: 10px;
 }
