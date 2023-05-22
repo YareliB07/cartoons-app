@@ -1,69 +1,78 @@
-import React, { useState } from 'react';
+
 import '../Reactions.css';
+import KafkaService from "../services/kafka.services";
 
+function saveLike(e, status) {
+
+    let data = {
+        id: 0,
+        status: status
+    };
+
+    console.log(JSON.stringify(data));
+
+    KafkaService.reaction("i-love-yareli");
+    e.preventDefault();
+}
+
+// eslint-disable-next-line
 function Reactions() {
-    const [likes, setLikes] = useState(0);
-    const [loves, setLoves] = useState(0);
-    const [hahas, setHahas] = useState(0);
-    const [surprise, setSurprise] = useState(0);
-    const [sads, setSads] = useState(0);
-    const [angrys, setAngrys] = useState(0);
-
-    function handleLikeClick() {
-        setLikes(likes + 1);
-    }
-
-    function handleLoveClick() {
-        setLoves(loves + 1);
-    }
-
-    function handleHahaClick() {
-        setHahas(hahas + 1);
-    }
-
-    function handleSurpriseClick() {
-        setSurprise(surprise + 1);
-    }
-
-    function handleSadClick() {
-        setSads(sads + 1);
-    }
-
-    function handleAngryClick() {
-        setAngrys(angrys + 1);
-    }
-
     return (
         <div>
-            <button className="reaction-button like" onClick={handleLikeClick}>
+            <button className="reaction-button like" onClick={(e) => {
+                e.preventDefault();
+                saveLike(e, 1)
+
+            }
+            } >
                 <span className="icon">👍🏻</span>
             </button>
-            <span>{likes}</span>
 
-            <button className="reaction-button love" onClick={handleLoveClick}>
+            <button className="reaction-button love" onClick={(e) => {
+                e.preventDefault();
+                saveLike(e, 1)
+
+            }
+            } >
                 <span className="icon">❤️</span>
             </button>
-            <span>{loves}</span>
 
-            <button className="reaction-button haha" onClick={handleHahaClick}>
+            <button className="reaction-button haha" onClick={(e) => {
+                e.preventDefault();
+                saveLike(e, 1)
+
+            }
+            } >
                 <span className="icon">😂</span>
             </button>
-            <span>{hahas}</span>
 
-            <button className="reaction-button surprise" onClick={handleSurpriseClick}>
+            <button className="reaction-button surprise" onClick={(e) => {
+                e.preventDefault();
+                saveLike(e, 1)
+
+            }
+            } >
                 <span className="icon">😮</span>
             </button>
-            <span>{surprise}</span>
 
-            <button className="reaction-button sad" onClick={handleSadClick}>
+            <button className="reaction-button sad" onClick={(e) => {
+                e.preventDefault();
+                saveLike(e, 1)
+
+            }
+            } >
                 <span className="icon">😢</span>
             </button>
-            <span>{sads}</span>
 
-            <button className="reaction-button angry" onClick={handleAngryClick}>
+            <button className="reaction-button angry" onClick={(e) => {
+                e.preventDefault();
+                saveLike(e, 1)
+
+            }
+            } >
                 <span className="icon">😠</span>
             </button>
-            <span>{angrys}</span>
+
         </div>
     );
 }
