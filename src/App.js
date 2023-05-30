@@ -5,6 +5,7 @@ import { Routes, Route, Link } from "react-router-dom";
 
 import AddCartoon from "./components/add-cartoon.component";
 import CartoonList from './components/cartoons-list.component';
+import Login from './components/Login';
 
 
 class App extends Component {
@@ -32,6 +33,8 @@ class App extends Component {
         <div className="container mt-3 bg-dark mx-auto">
           <h2>Cartoons App</h2>
           <Routes>
+          <Route path="/" element={<Login/>}/>
+            <Route path="/login" element={<Login/>}/>
             <Route path="/" element={<CartoonList />} />
             <Route path="add" element={<AddCartoon />} />
           </Routes>
