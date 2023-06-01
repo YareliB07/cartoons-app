@@ -1,52 +1,73 @@
-.reaction-button.like {
-    background-color: #2d88ff;
-  }
-  
-  .reaction-button.love {
-    background-color: #ea063b;
-  }
-  
-  .reaction-button.haha {
-    background-color: #ff8b07;
-  }
-  
-  .reaction-button.surprise {
-    background-color: #ffd607;
-  }
+.reactions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7px;
+  margin-bottom: 6px;
+}
 
-  .reaction-button.sad {
-    background-color: #9e9e9e;
-  }
+.reaction {
+  width: 48px;
+  height: 48px;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  margin-top: 4px;
+  margin-right: 8px;
+  margin-bottom: 14px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.reaction:hover {
+  transform: scale(1.2);
+  /* aumentamos el tamaño de la imagen al 110% */
+}
+
+.reaction-like {
+  background-image: url('../src/images/like.png');
+}
+
+.reaction-love {
+  background-image: url('../src/images/heart.png');
+}
+
+.reaction-haha {
+  background-image: url('..//src/images/smile.png');
+}
+
+.reaction-wow {
+  background-image: url('../src/images/wow.png');
+}
+
+.reaction-sad {
+  background-image: url('../src/images/sad.png');
+}
+
+.reaction-angry {
+  background-image: url('../src/images/angry.png');
+}
+
+tool-tip {
+  position: absolute;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+
+  box-sizing: 0 0 10px #000000;
+  padding: .5rem 1rem;
+  font-size: .8rem;
+  border-radius: 8px;
+
+  top: 80%;
   
-  .reaction-button.angry {
-    background-color: #000000;
-  }
-  
-  .reaction-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 90%;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-    margin-right: 8px;
-  }
-  
-  .reaction-button .icon {
-    font-size: 20px;
-    align-items: center;
-  }
-  
-  .reaction-button .label {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: bold;
-    color: #333;
-    display: none;
-  }
-  
-  .reaction-button:hover .label {
-    display: inline-block;
-  }
+  opacity: 0;
+  transition: opacity .3s ease;
+}
+
+:has(>tool-tip){
+  position: relative;
+}
+
+:has(>tool-tip):hover tool-tip{
+  opacity: 1;
+}
