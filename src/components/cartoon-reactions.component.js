@@ -15,6 +15,7 @@ const Reactions= ({ id }) => {
 
   useEffect(() => {
     fetchReactions();
+    // eslint-disable-next-line
   }, []);
 
   const fetchReactions = async (r) => {
@@ -64,6 +65,7 @@ const Reactions= ({ id }) => {
         e.preventDefault();
         reaction(e, "like");
       }}
+      onMouseOver={fetchReactions}
       >
         <tool-tip>{likeCount}</tool-tip>
       </div>
@@ -71,35 +73,45 @@ const Reactions= ({ id }) => {
       <div className="reaction reaction-love" onClick={(e) => {
         e.preventDefault();
         reaction(e, "love");
-      }}>
+      }}
+      onMouseOver={fetchReactions}
+      >
         <tool-tip>{loveCount}</tool-tip>
       </div>
 
       <div className="reaction reaction-haha" onClick={(e) => {
         e.preventDefault();
         reaction(e, "haha");
-      }}>
+      }}
+      onMouseOver={fetchReactions}
+      >
         <tool-tip>{HahaCount}</tool-tip>
       </div>
 
       <div className="reaction reaction-wow" onClick={(e) => {
         e.preventDefault();
         reaction(e, "wow");
-      }}>
+      }}
+      onMouseOver={fetchReactions}
+      >
         <tool-tip>{WowCount}</tool-tip>
       </div>
 
       <div className="reaction reaction-sad" onClick={(e) => {
         e.preventDefault();
         reaction(e, "sad");
-      }}>
+      }}
+      onMouseOver={fetchReactions}
+      >
         <tool-tip>{SadCount}</tool-tip>
       </div>
 
       <div className="reaction reaction-angry" onClick={(e) => {
         e.preventDefault();
         reaction(e, "angry");
-      }}>
+      }}
+      onMouseOver={fetchReactions}
+      >
         <tool-tip>{AngryCount}</tool-tip>
       </div>
 
