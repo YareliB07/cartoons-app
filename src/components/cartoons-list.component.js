@@ -84,11 +84,15 @@ export default class CartoonList extends Component {
                                     </tr>
                                     
                                     <img src={tutorial.url} width="540" height="280" alt=""/>
+                                    
                                     <tr>
-                                        <Reactions></Reactions>
+                                        <Reactions
+                                        id={tutorial.id}></Reactions>
                                     </tr>
                                     <tr>
-                                        <CommentBox></CommentBox>
+                                        <CommentBox
+                                        id={tutorial.id}>
+                                        </CommentBox>
                                     </tr>
                                 </li>
                             ))}
